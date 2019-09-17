@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0",
+    "parameters": {
+        "webAppName": {
+            "type": "string",
+            "minLength": 3,
+            "metadata": {
+                "description": "A unique name for your webApp"
+            }
+        },
+		"appServicePlanName": {
+            "type": "string",
+            "minLength": 3,
+            "metadata": {
+                "description": "A unique name for your AppServicePlan"
+            }
+        },
+        "Location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "The location for your webApp"
+            }
+        },
+        "StorageTier": {
+            "type": "string",
+            "defaultValue" : "S1",
+            "allowedValues": [
+                "S1",
+                "S2",
+                "S3"
+            ],
+            "metadata": {
+              "description": "The SKU for your AppServicePlan"
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2017-08-01",
+            "kind": "app",
+            "name": "[parameters('appServicePlanName')]",
+            "location": "[parameters('Location')]",
+            "sku": {
+                "name": "[parameters('StorageTier')]"
+            },
+            "properties": {
+                "name": "[parameters('appServicePlanName')]"
+            }
+              
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2016-08-01",
+            "kind": "app",
+            "name": "[parameters('webAppName')]",
+            "location": "[parameters('Location')]",
+            "properties": {
+                "name": "[parameters('webAppName')]"
+            },
+            "dependsOn": [
+                "[parameters('appServicePlanName')]"
+            ]
+        }
+    ]
+}

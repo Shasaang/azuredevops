@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0",
+	"parameters": {	
+		"webAppName": {
+            "value": "shahdemoapp11",
+            "metadata": {
+                "description": "A unique name for webApp"
+            }
+        },
+		"appServicePlanName": {
+            "value": "shahdemoappplan",
+            "metadata": {
+                "description": "A unique name for AppServicePlan"
+            }
+        },
+        "Location": {
+            "value": "Central US",
+            "metadata": {
+                "description": "The location for your webApp"
+            }
+        },
+        "StorageTier": {
+            "value": "S1",
+            "metadata": {
+                "description": "The SKU for your AppServicePlan"
+            }
+        }
+     }
+  }
