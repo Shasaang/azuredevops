@@ -1,12 +1,12 @@
 ﻿[CmdletBinding()]
-param( $appname,
-       $aspname,
+param( $aname,
+       $asname,
        $rgname
 )
 
 $dyobject = @{
- 'webAppName' = $appname
- 'appServicePlanName' = $aspname
+ 'webAppName' = $aname
+ 'appServicePlanName' = $asname
  'Location' = 'Central US'
  'StorageTier' =  'S1'
 }
