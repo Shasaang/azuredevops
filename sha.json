@@ -58,7 +58,7 @@
             "name": "[parameters('webAppName')]",
             "location": "[parameters('Location')]",
             "properties": {
-                "name": "[parameters('webAppName')]"
+                "name": "[parameters('appServicePlanName')]"
             },
             "dependsOn": [
                 "[parameters('appServicePlanName')]"
