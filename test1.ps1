@@ -14,8 +14,8 @@ $dyobject = @{
 $rg=$rgname
 $loc="Central US"
 
-$password = ConvertTo-SecureString 'AzureTest@123' -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential ('deepak@sindhus.in', $password)
+$password = ConvertTo-SecureString 'Palak@023' -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ('komal.l@hcl.com', $password)
 
 #login to subscrption
 login-azureRmAccount -Credential $Credential
