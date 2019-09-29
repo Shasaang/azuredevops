@@ -19,7 +19,7 @@ $credential = New-Object System.Management.Automation.PSCredential ('komal.l@hcl
 
 #login to subscrption
 login-azureRmAccount -Credential $Credential
-Select-AzureRmSubscription -SubscriptionId 83f64421-ba30-4f5c-974e-c09331cf25b9
+Select-AzureRmSubscription -SubscriptionId b1664222-374f-4c99-8fe4-cba23c99ee0e
 
 #create resource group
 New-AzurermResourceGroup -Name $rg -Location $loc
