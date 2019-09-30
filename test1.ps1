@@ -25,4 +25,4 @@ Select-AzureRmSubscription -SubscriptionId b1664222-374f-4c99-8fe4-cba23c99ee0e
 New-AzurermResourceGroup -Name $rg -Location $loc
 
 # Create an App Service plan and App Service in Free tier.
-New-AzureRmResourceGroupDeployment -ResourceGroupName $rg -TemplateUri sha.json -TemplateParameterObject $dyobject
+New-AzureRmResourceGroupDeployment -ResourceGroupName $rg -TemplateUri https://raw.githubusercontent.com/Shasaang/azuredevops/master/sha.json -TemplateParameterObject $dyobject
